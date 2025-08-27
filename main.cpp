@@ -14,6 +14,7 @@ int main(){
      
      
      sf::Window window(sf::VideoMode({800,600}), "Okno", sf::Style::Default, settings);
+     window.setFramerateLimit(60);
      if(!gladLoadGL()){
           std::cerr<<"Failed to initialize GLAD!\n";
           return -1;
