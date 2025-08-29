@@ -22,7 +22,7 @@ int main(){
      std::cerr << "OpenGL version: " << glGetString(GL_VERSION) << "\n";
      std::cerr << "GLSL version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << "\n";
      glViewport(0, 0, 800, 600);
-     unsigned int shaderProgram = Shader::compileShaders("shaders/vertexShader.vs","shaders/fragmentShader.fs",
+     unsigned int shaderProgram = Shader::compileShaders("shaders/vertexShader.vs","shaders/geometryShader.gs","shaders/fragmentShader.fs",
           std::vector<std::string>({"aPos", "aColor", "aTexCoord"}));
 
      int width, height, nrChannels;
@@ -112,7 +112,8 @@ int main(){
 
      glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
-     glDisable(GL_DEPTH_TEST);
+
+	   //  glDisable(GL_DEPTH_TEST);
      std::cerr<<triangle_count<<"\n";
      sf::Clock clock;
      float timet;
@@ -176,7 +177,7 @@ int main(){
           glm::mat4 model,view;
           model = view = glm::mat4(1.0f);
           model = glm::rotate(model,glm::radians(-90.0f),glm::vec3(1.0f,0.0f,0.0f));
-          model = glm::rotate(model,glm::radians(timet*0.1f),glm::vec3(0.0f,0.0f,1.0f));
+          model = glm::rotate(model,glm::radians(timet*10.0f),glm::vec3(0.0f,0.0f,1.0f));
           view = glm::translate(view, camera_position);
 
           int modelLoc = glGetUniformLocation(shaderProgram, "model");
