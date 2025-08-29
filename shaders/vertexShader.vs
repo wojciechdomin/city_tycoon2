@@ -15,9 +15,9 @@ uniform float time;
 void main()
 {
     int i = gl_InstanceID;
-    int j = i  % 33;
-    i = i / 33;
-    vec4 bbb = vec4(0.1*aPos, 1.0); // see how we directly give a vec3 to vec4's constructor
+    int j = i  % 4;
+    i = i / 4;
+    vec4 bbb = vec4(0.05*aPos, 1.0) + vec4(-0.5+0.2*i,0.0,-0.5+0.4*j,0.0); // see how we directly give a vec3 to vec4's constructor
     vertexColor = vec4(0.9*j/10.0, 0.9*i/10.0, 1.0, 1.0); // set the output variable to a dark-red color
     //bbb = vec4(0.0+j*1.0,0.0+i*1.0,9.0f,1.0f)+vec4(aPos, 0.0);
     float factor = 1.0;

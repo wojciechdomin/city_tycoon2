@@ -140,12 +140,16 @@ int main(){
           glUniform1f(timeLoc, timet);
           glm::vec4 punkt(vertices[0],vertices[1],vertices[2],1.0f);
           punkt = proj * view  * model *  punkt;
+     	  
           //std::cerr<<punkt.x<<","<<punkt.y<<","<<punkt.z<<","<<punkt.w<<"\n";
 
 
-		glDrawArraysInstanced(GL_TRIANGLES, 0, triangle_count*3*8/*amount of vertices*/,1 /*count of instances*/);
+		glDrawArraysInstanced(GL_TRIANGLES, 0, triangle_count*3*8/*amount of vertices*/,10 /*count of instances*/);
 
           window.display();
+          
+
+
      }
 
 

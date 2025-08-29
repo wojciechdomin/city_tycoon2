@@ -1,0 +1,5 @@
+CompileFlags:
+  Add: 
+    - -IC:/Libraries/SFML-2.5.1/include
+    - -IC:/Libraries/glad/include/
+    - -IC:/Users/Admin/Desktop/city_tycoon2/city_tycoon2
